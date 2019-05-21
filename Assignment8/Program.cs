@@ -11,11 +11,23 @@ namespace Assignment8
     {
         static void Main(string[] args)
         {
+            ArrayList arrayList = new ArrayList();
             MyGenericArrayList<string, int> myGenericArrayList = new MyGenericArrayList<string, int>();
             myGenericArrayList.key = "abc";
             myGenericArrayList.value = 10;
-            Console.WriteLine(myGenericArrayList.key);
-            Console.WriteLine(myGenericArrayList.value);
+            MyGenericArrayList<string, int> myGenericArrayList2 = new MyGenericArrayList<string, int>();
+            myGenericArrayList2.key = "cbc";
+            myGenericArrayList2.value = 5;
+
+            arrayList.Add(myGenericArrayList);
+            arrayList.Add(myGenericArrayList2);
+
+            foreach(MyGenericArrayList<string,int> myGeneric in arrayList)
+            {
+                Console.WriteLine(myGeneric.key);
+                Console.WriteLine(myGeneric.value);
+            }
+
             Console.ReadKey();
         }
     }
